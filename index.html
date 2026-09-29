@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Par Bahrae — Forecasting, Quant &amp; Data Projects</title>
+  <meta name="description" content="Portfolio of Par Bahrae (ParBproject): time-series forecasting, quantitative finance, machine learning and data tools in Python, SQL and JavaScript." />
+  <link rel="canonical" href="https://parbproject.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://parbproject.github.io/" />
+  <meta property="og:title" content="Par Bahrae — Forecasting, Quant &amp; Data Projects" />
+  <meta property="og:description" content="Portfolio of Par Bahrae (ParBproject): time-series forecasting, quantitative finance, machine learning and data tools in Python, SQL and JavaScript." />
+  <meta property="og:image" content="https://parbproject.github.io/assets/cpf_02_forecast.png" />
+  <meta property="og:image:width" content="2049" />
+  <meta property="og:image:height" content="1123" />
+  <meta property="og:image:alt" content="12-week WTI crude oil forecast with ARIMA and Prophet 95% confidence intervals" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Par Bahrae — Forecasting, Quant &amp; Data Projects" />
+  <meta name="twitter:description" content="Portfolio of Par Bahrae (ParBproject): time-series forecasting, quantitative finance, machine learning and data tools in Python, SQL and JavaScript." />
+  <meta name="twitter:image" content="https://parbproject.github.io/assets/cpf_02_forecast.png" />
+  <meta name="twitter:image:alt" content="12-week WTI crude oil forecast with ARIMA and Prophet 95% confidence intervals" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="bg-ink-950 font-sans text-slate-300 antialiased selection:bg-accent/30">
+
+  <!-- NAV -->
+  <header id="nav" class="sticky top-0 z-50 border-b border-white/[0.06] bg-ink-950/75 backdrop-blur-xl backdrop-saturate-150">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-emerald-700 font-mono text-[11px] font-semibold text-ink-950">PB</span>
+        <span class="text-[15px] font-semibold tracking-tight text-white">Par Bahrae</span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#featured" class="navlink" data-nav="featured">Case study</a>
+        <a href="#strengths" class="navlink" data-nav="strengths">Strengths</a>
+        <a href="#projects" class="navlink" data-nav="projects">Projects</a>
+        <a href="#skills" class="navlink" data-nav="skills">Skills</a>
+        <a href="#contact" class="navlink" data-nav="contact">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/ParBproject" class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-white/25 hover:text-white" aria-label="GitHub profile"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="#contact" class="hidden rounded-lg bg-white/[0.06] px-3.5 py-2 text-sm font-semibold text-white ring-1 ring-white/10 transition hover:bg-white/10 sm:inline-flex">Get in touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="grid-bg pointer-events-none absolute inset-0"></div>
+      <div class="aurora aurora-a"></div>
+      <div class="aurora aurora-b"></div>
+      <div class="relative mx-auto max-w-6xl px-5 pt-10 sm:px-6 sm:pt-16 lg:pt-14">
+          <p class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] py-1 pl-2 pr-3.5 text-[13px] text-slate-300">
+            <span class="pulse-dot h-2 w-2 rounded-full bg-accent"></span>
+            Par Bahrae <span class="text-slate-600">/</span> Software Developer
+          </p>
+          <h1 class="mt-6 max-w-5xl text-[2.35rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[4.6rem]">
+            Forecasting &amp; quant tools, <br class="hidden sm:block" /><span class="grad-text">benchmarked and tested.</span>
+          </h1>
+      </div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-8 sm:px-6 sm:pb-16 sm:pt-10 lg:grid-cols-12 lg:gap-12 lg:pb-14">
+        <div class="lg:col-span-6">
+          <p class="max-w-xl text-[17px] leading-relaxed text-slate-300 sm:text-[19px]">
+            Python projects in time-series forecasting, portfolio and credit-risk modeling, and the dashboards that explain them. The core work checks models against naïve baselines or benchmarks and ships with tests and CI.
+          </p>
+          <div class="mt-5 flex flex-wrap items-center gap-2">
+            <span class="text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500">Portfolio focus</span>
+            <span class="chip">Data analyst</span><span class="chip">Quant</span><span class="chip">Forecasting</span><span class="chip">Software</span>
+          </div>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="#featured" class="group btn-primary">See the case study <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.58 11H3a1 1 0 110-2h11.59l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></a>
+            <div class="flex gap-3">
+              <a href="#projects" class="btn-ghost flex-1 sm:flex-none">All projects</a>
+              <a href="https://github.com/ParBproject" class="btn-ghost flex-1 sm:flex-none"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
+            </div>
+          </div>
+          <blockquote class="mt-8 max-w-xl border-l-2 border-white/10 pl-4 text-[13.5px] leading-relaxed text-slate-500">
+            &ldquo;Software Developer | Python, C/C++, SQL &amp; AI | Building practical SaaS, automation and data-driven solutions.&rdquo;
+            <span class="mt-1 block font-mono text-[11px] text-slate-600">— GitHub bio</span>
+          </blockquote>
+        </div>
+
+        <div class="lg:col-span-6">
+          <figure class="relative">
+            <div class="absolute -inset-6 rounded-[28px] bg-gradient-to-tr from-accent/15 via-transparent to-transparent blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-900 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.9)] ring-1 ring-white/[0.04]">
+              <div class="flex items-center gap-2 border-b border-white/[0.06] bg-white/[0.02] px-4 py-2.5">
+                <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span><span class="h-2.5 w-2.5 rounded-full bg-white/10"></span><span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+                <span class="ml-3 truncate font-mono text-[11px] text-slate-500">commodity-price-forecaster — Streamlit</span>
+              </div>
+              <img src="assets/cpf_02_forecast.png" alt="12-week WTI crude oil forecast with ARIMA and Prophet 95% confidence intervals" class="block w-full" />
+            </div>
+            <div class="absolute -bottom-5 left-4 hidden items-center gap-3 rounded-xl border border-white/10 bg-ink-900/95 px-4 py-3 shadow-2xl backdrop-blur sm:flex">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent-soft text-accent">
+                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M3 3a1 1 0 011 1v11h12a1 1 0 110 2H3a1 1 0 01-1-1V4a1 1 0 011-1zm13.7 3.3a1 1 0 010 1.4l-4 4a1 1 0 01-1.4 0L9 9.42l-2.3 2.29a1 1 0 01-1.4-1.42l3-3a1 1 0 011.4 0L12 9.58l3.3-3.29a1 1 0 011.4 0z"/></svg>
+              </span>
+              <div>
+                <p class="text-[13px] font-semibold text-white">ARIMA + Prophet, 95% intervals</p>
+                <p class="font-mono text-[10.5px] text-slate-500">rolling-origin validated vs naïve baselines</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <!-- stat row -->
+      <div class="relative mx-auto max-w-6xl px-5 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
+        <dl class="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] sm:grid-cols-4">
+          <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-500">Public repositories</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">15</dd></div>
+          <div class="border-b border-white/[0.06] p-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-500">Streamlit dashboards</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">6</dd></div>
+          <div class="border-r border-white/[0.06] p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-500">Repos with CI pipelines</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">5</dd></div>
+          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-500">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">3</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FEATURED CASE STUDY -->
+    <section id="featured" data-section class="relative">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <p class="eyebrow"><span class="eyebrow-num">01</span> Featured case study</p>
+            <h2 class="h2">Commodity Forecasting Research Lab</h2>
+            <p class="lede">Weekly forecasts for energy, metals and agricultural futures, built to answer a harder question than &ldquo;what will the price be?&rdquo;: <span class="text-slate-200">does a sophisticated model actually beat a naïve baseline, and how uncertain is it?</span></p>
+          </div>
+          <div class="flex shrink-0 flex-wrap gap-3">
+            <a href="https://github.com/ParBproject/commodity-price-forecaster" class="group btn-primary"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View code</a>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-2">
+          <span class="chip">Python</span><span class="chip">statsmodels / pmdarima</span><span class="chip">Prophet</span><span class="chip">Streamlit</span><span class="chip">pytest</span><span class="chip">CI · Py 3.10 &amp; 3.12</span>
+        </div>
+
+        <div class="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-14">
+          <!-- narrative -->
+          <div class="space-y-10 lg:col-span-5">
+            <div class="cs-step">
+              <span class="cs-num">01</span>
+              <h3 class="text-lg font-semibold text-white">Problem</h3>
+              <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Commodity forecasts are easy to make look convincing. The question is whether a model beats transparent benchmarks out-of-sample, and how to present uncertainty and weather or supply/demand assumptions without implying causality.</p>
+            </div>
+            <div class="cs-step">
+              <span class="cs-num">02</span>
+              <h3 class="text-lg font-semibold text-white">Approach</h3>
+              <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Real futures histories from Yahoo Finance (WTI, Brent, natural gas, gold, silver, copper, corn, wheat, soybeans) resampled weekly, then modeled with Auto-ARIMA / SARIMAX and Prophet. Open-Meteo weather for producing regions and STL decomposition add context.</p>
+            </div>
+            <div class="cs-step">
+              <span class="cs-num">03</span>
+              <h3 class="text-lg font-semibold text-white">Validation</h3>
+              <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Rolling-origin, one-step evaluation using only data before each forecast date. Last-value, drift and 52-week seasonal-naïve baselines, scored on MAE, RMSE, MAPE, sMAPE, <span class="text-slate-200">MASE</span> and directional accuracy.</p>
+              <div class="mt-4 rounded-xl border border-white/[0.07] bg-ink-900 px-4 py-3 font-mono text-[11px] leading-6 text-slate-400 sm:text-[12px]">
+                <span class="text-accent">MASE &lt; 1</span> → better than the naïve error scale<br />
+                <span class="text-slate-500">MASE &gt; 1</span> → worse than the naïve error scale
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-num">04</span>
+              <h3 class="text-lg font-semibold text-white">Result</h3>
+              <p class="mt-2 text-[15px] leading-relaxed text-slate-400">A Streamlit research dashboard with six workbenches: market overview, forecast with intervals, a baseline validation leaderboard, weather context, decomposition, and producer-risk views with explicit supply, demand and weather scenario controls. Tests and CI run on Python 3.10 and 3.12.</p>
+              <p class="mt-3 text-[13px] leading-relaxed text-slate-500">Stated limitations: contract-roll effects, regime change, correlation &ne; causation. Educational, not trading advice.</p>
+            </div>
+          </div>
+
+          <!-- screenshots -->
+          <div class="order-first -mx-2 space-y-6 sm:mx-0 lg:order-none lg:col-span-7">
+            <figure>
+              <a href="assets/cpf_01_overview.png" class="shot block transition hover:border-white/15"><img src="assets/cpf_01_overview.png" alt="Market overview: WTI price history, weekly returns and descriptive statistics" /></a>
+              <figcaption class="mt-3 px-2 text-[13px] leading-relaxed text-slate-400 sm:px-0"><span class="mr-2 inline-block h-1 w-1 -translate-y-0.5 rounded-full bg-accent"></span><span class="font-medium text-slate-300">Market overview</span> <span class="text-slate-500">— price history, weekly returns, descriptive statistics</span></figcaption>
+            </figure>
+            <figure>
+              <a href="assets/cpf_05_risk_dashboard.png" class="shot block transition hover:border-white/15"><img src="assets/cpf_05_risk_dashboard.png" alt="Producer and supplier risk heatmap with rolling volatility" /></a>
+              <figcaption class="mt-3 px-2 text-[13px] leading-relaxed text-slate-400 sm:px-0"><span class="mr-2 inline-block h-1 w-1 -translate-y-0.5 rounded-full bg-accent"></span><span class="font-medium text-slate-300">Producer-risk dashboard</span> <span class="text-slate-500">— risk scores and rolling volatility</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- pipeline -->
+        <div class="panel mt-16 p-6 sm:p-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-3">
+            <h3 class="text-base font-semibold text-white">Forecasting pipeline</h3>
+            <p class="font-mono text-[11px] text-slate-500">from the repo&rsquo;s architecture diagram</p>
+          </div>
+          <!-- desktop diagram -->
+          <svg class="mt-8 hidden w-full md:block" viewBox="0 0 1120 262" role="img" aria-label="Pipeline: futures prices to weekly series to baselines, ARIMA and Prophet; baselines to rolling-origin validation; models to forecast with intervals; weather to context; all feed a research dashboard and scenario and producer-risk views." font-family="Inter, sans-serif">
+            <defs>
+              <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#475569"/></marker>
+              <marker id="aha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#34d399"/></marker>
+              <linearGradient id="nodeg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151b25"/><stop offset="1" stop-color="#0f141c"/></linearGradient>
+            </defs>
+            <g fill="none" stroke="#334155" stroke-width="1.5">
+              <path d="M172 68 H232" marker-end="url(#ah)"/>
+              <path d="M408 68 C440 68 440 28 468 28" marker-end="url(#ah)"/>
+              <path d="M408 68 C440 68 440 108 468 108" marker-end="url(#ah)"/>
+              <path d="M408 68 C440 68 440 188 468 188" marker-end="url(#ah)"/>
+              <path d="M644 108 C676 108 676 143 704 143" marker-end="url(#ah)"/>
+              <path d="M644 188 C676 188 676 143 704 143" marker-end="url(#ah)"/>
+              <path d="M880 143 C912 143 912 95 940 95" marker-end="url(#ah)"/>
+              <path d="M172 238 H232" marker-end="url(#ah)"/>
+              <path d="M408 238 H850 C900 238 900 130 940 130" marker-end="url(#ah)"/>
+              <path d="M1030 150 V186" marker-end="url(#ah)"/>
+            </g>
+            <g fill="none" stroke="#34d399" stroke-width="1.6">
+              <path class="flow-dash" d="M644 28 H704" marker-end="url(#aha)"/>
+              <path class="flow-dash" d="M880 38 C912 38 912 60 940 60" marker-end="url(#aha)"/>
+            </g>
+            <!-- nodes -->
+            <g>
+              <rect x="0" y="40" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="16" y="64" fill="#f1f5f9" font-size="13.5" font-weight="600">Futures prices</text>
+              <text x="16" y="82" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">Yahoo Finance</text>
+
+              <rect x="0" y="210" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041" transform="translate(0,-4)"/>
+              <text x="16" y="230" fill="#f1f5f9" font-size="13.5" font-weight="600">Weather data</text>
+              <text x="16" y="248" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">Open-Meteo</text>
+
+              <rect x="236" y="40" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="252" y="64" fill="#f1f5f9" font-size="13.5" font-weight="600">Weekly series</text>
+              <text x="252" y="82" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">resample · returns</text>
+
+              <rect x="236" y="206" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="252" y="230" fill="#f1f5f9" font-size="13.5" font-weight="600">Context analysis</text>
+              <text x="252" y="248" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">correlation · STL</text>
+
+              <rect x="472" y="0" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="488" y="24" fill="#f1f5f9" font-size="13.5" font-weight="600">Naïve baselines</text>
+              <text x="488" y="42" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">last · drift · 52-wk</text>
+
+              <rect x="472" y="80" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="488" y="104" fill="#f1f5f9" font-size="13.5" font-weight="600">ARIMA / SARIMAX</text>
+              <text x="488" y="122" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">auto-order search</text>
+
+              <rect x="472" y="160" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="488" y="184" fill="#f1f5f9" font-size="13.5" font-weight="600">Prophet</text>
+              <text x="488" y="202" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">trend + seasonality</text>
+
+              <rect x="708" y="4" width="172" height="68" rx="10" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-opacity="0.55"/>
+              <text x="724" y="29" fill="#a7f3d0" font-size="13.5" font-weight="600">Rolling-origin</text>
+              <text x="724" y="46" fill="#a7f3d0" font-size="13.5" font-weight="600">validation</text>
+              <text x="724" y="63" fill="#34d399" font-size="11" font-family="JetBrains Mono, monospace">MASE · RMSE · dir.acc</text>
+
+              <rect x="708" y="115" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="724" y="139" fill="#f1f5f9" font-size="13.5" font-weight="600">Forecast + intervals</text>
+              <text x="724" y="157" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">95% CI · ensemble</text>
+
+              <rect x="944" y="40" width="172" height="110" rx="10" fill="url(#nodeg)" stroke="#334155"/>
+              <text x="960" y="66" fill="#f1f5f9" font-size="13.5" font-weight="600">Research</text>
+              <text x="960" y="84" fill="#f1f5f9" font-size="13.5" font-weight="600">dashboard</text>
+              <text x="960" y="106" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">Streamlit ·</text>
+              <text x="960" y="122" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">6 workbenches</text>
+
+              <rect x="944" y="190" width="172" height="56" rx="10" fill="url(#nodeg)" stroke="#263041"/>
+              <text x="960" y="214" fill="#f1f5f9" font-size="13.5" font-weight="600">Scenario &amp; risk</text>
+              <text x="960" y="232" fill="#64748b" font-size="11" font-family="JetBrains Mono, monospace">supply · demand · wx</text>
+            </g>
+          </svg>
+          <!-- mobile steps -->
+          <ol class="mt-6 space-y-3 md:hidden">
+            <li class="flex gap-3 rounded-xl border border-white/[0.06] bg-ink-900 p-3.5"><span class="font-mono text-xs text-accent">01</span><div><p class="text-sm font-semibold text-white">Futures prices → weekly series</p><p class="text-[13px] text-slate-500">Yahoo Finance · resample · returns</p></div></li>
+            <li class="flex gap-3 rounded-xl border border-white/[0.06] bg-ink-900 p-3.5"><span class="font-mono text-xs text-accent">02</span><div><p class="text-sm font-semibold text-white">Naïve baselines</p><p class="text-[13px] text-slate-500">Last value · drift · 52-week seasonal</p></div></li>
+            <li class="flex gap-3 rounded-xl border border-white/[0.06] bg-ink-900 p-3.5"><span class="font-mono text-xs text-accent">03</span><div><p class="text-sm font-semibold text-white">ARIMA / SARIMAX &amp; Prophet</p><p class="text-[13px] text-slate-500">Forecasts with 95% intervals</p></div></li>
+            <li class="flex gap-3 rounded-xl border border-accent-line bg-accent-soft p-3.5"><span class="font-mono text-xs text-accent">04</span><div><p class="text-sm font-semibold text-emerald-100">Rolling-origin validation</p><p class="text-[13px] text-emerald-300/70">MASE · RMSE · directional accuracy</p></div></li>
+            <li class="flex gap-3 rounded-xl border border-white/[0.06] bg-ink-900 p-3.5"><span class="font-mono text-xs text-accent">05</span><div><p class="text-sm font-semibold text-white">Weather context &amp; STL</p><p class="text-[13px] text-slate-500">Open-Meteo · descriptive, not causal</p></div></li>
+            <li class="flex gap-3 rounded-xl border border-white/[0.06] bg-ink-900 p-3.5"><span class="font-mono text-xs text-accent">06</span><div><p class="text-sm font-semibold text-white">Streamlit dashboard</p><p class="text-[13px] text-slate-500">Six workbenches · scenario &amp; producer risk</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STRENGTHS -->
+    <section id="strengths" data-section>
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+        <p class="eyebrow"><span class="eyebrow-num">02</span> What I bring</p>
+        <h2 class="h2">Three habits that show up across the repos</h2>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <div class="panel p-7">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent ring-1 ring-accent-line">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-white">Validation discipline</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Rolling-origin evaluation, naïve baselines, next-day targets with train-only scaling, and splitting before imputation &mdash; so results aren&rsquo;t flattered by leakage.</p>
+            <p class="mt-5 font-mono text-[11px] leading-5 text-slate-500">commodity-price-forecaster · stock-price-predictor · Stroke</p>
+          </div>
+          <div class="panel p-7">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent ring-1 ring-accent-line">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15l3-3 3 2 4-5"/></svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-white">Decision-ready dashboards</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Streamlit and static control boards that show uncertainty intervals, explicit scenario assumptions and KPIs &mdash; built for someone to act on, not just admire.</p>
+            <p class="mt-5 font-mono text-[11px] leading-5 text-slate-500">commodity-price-forecaster · Advanced-Financial-Models · Bayline</p>
+          </div>
+          <div class="panel p-7">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent ring-1 ring-accent-line">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3"/><path d="M16 9l4 3-4 3"/><path d="M13.5 5l-3 14"/></svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-white">Tested, reproducible code</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-slate-400">Modular packages with regression tests pinned to hand-calculated values, and GitHub Actions CI running lint, compile and test suites.</p>
+            <p class="mt-5 font-mono text-[11px] leading-5 text-slate-500">Advanced-Financial-Models · stock-price-predictor · skycast</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects" data-section>
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-2xl">
+            <p class="eyebrow"><span class="eyebrow-num">03</span> Selected work</p>
+            <h2 class="h2">Projects</h2>
+            <p class="lede">Forecasting, quantitative finance, machine learning, analytics and tooling &mdash; each with code, screenshots and run instructions.</p>
+          </div>
+        </div>
+
+        
+          <div class="mt-10 flex flex-wrap gap-2" role="toolbar" aria-label="Filter projects">
+            <button class="filter on" data-filter="all">All</button>
+            <button class="filter" data-filter="forecasting">Forecasting</button>
+            <button class="filter" data-filter="quant">Quant / Finance</button>
+            <button class="filter" data-filter="ml">ML</button>
+            <button class="filter" data-filter="analytics">Analytics</button>
+            <button class="filter" data-filter="tools">Tools</button>
+          </div>
+
+        <div id="grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="pcard group" data-tags="quant forecasting">
+            <a href="https://github.com/ParBproject/Advanced-Financial-Models" class="thumb-wrap" aria-label="Advanced Financial Modeling Suite repository">
+              <img src="assets/afm_cashflow.png" alt="Excel cash-flow forecast model" loading="eager" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span><span class="chip">Forecasting</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Advanced Financial Modeling Suite</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Excel workbook, a tested Python modeling core and a Streamlit dashboard for liquidity, credit and portfolio risk.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Expected loss = EAD × PD × LGD, with capped stress scenarios</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>HHI concentration and covariance-aware wᵀΣw risk</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Seeded Monte Carlo; numerical regression tests in CI</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">Python · Excel · Streamlit</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/Advanced-Financial-Models" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="ml forecasting">
+            <a href="https://github.com/ParBproject/stock-price-predictor" class="thumb-wrap" aria-label="Stock Price Predictor repository">
+              <img src="assets/spp_lstm.png" alt="LSTM predicted vs actual close price" loading="eager" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">ML</span><span class="chip">Forecasting</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Stock Price Predictor</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Next-day forecasting with LSTM vs Random Forest, then checked in a Backtrader workflow.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Explicit t+1 targets and train-only scaling</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>No future-news leakage in sentiment features</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Commission-aware sizing; regression tests in CI</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">TensorFlow · scikit-learn · Backtrader</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/stock-price-predictor" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="quant">
+            <a href="https://github.com/ParBproject/Portfolio-Optimizer" class="thumb-wrap" aria-label="Markowitz Portfolio Optimizer repository">
+              <img src="assets/po_frontier.png" alt="Markowitz efficient frontier" loading="eager" style="object-position:center" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Markowitz Portfolio Optimizer</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Interactive mean-variance optimization with an efficient frontier, diagnostics and backtesting.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Constrained optimization with CVXPY</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Global minimum-variance & max-Sharpe portfolios</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Backtest against an equal-weight benchmark</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">CVXPY · Plotly · Streamlit</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/Portfolio-Optimizer" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="analytics">
+            <a href="https://github.com/ParBproject/E-commerce-Order-Fulfillment-Process-Improvement" class="thumb-wrap" aria-label="Bayline — Fulfillment Control repository">
+              <img src="assets/bay_board.png" alt="Bayline dock-to-stage control board" loading="eager" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Analytics</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Bayline — Fulfillment Control</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Three-building dock-to-stage case study: find the bottleneck, test a process change, price the labor.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>DuckDB SQL marts with JOINs, RANK() OVER, LAG</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Mann–Whitney test and bootstrap CI on the median</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Median cycle 110 → 85 min <span class="text-slate-500">(seeded, illustrative data)</span></span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">SQL · DuckDB · Python</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/E-commerce-Order-Fulfillment-Process-Improvement" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="ml analytics">
+            <a href="https://github.com/ParBproject/Stroke" class="thumb-wrap" aria-label="Stroke Casebook repository">
+              <img src="assets/stroke_models.png" alt="Stroke casebook model comparison and holdout ROC" loading="eager" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">ML</span><span class="chip">Analytics</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Stroke Casebook</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Holdout study of the public Kaggle stroke file (249 strokes in 5,110 rows), treated as a rare-event problem.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Stratified split before any imputation</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Baselines vs logistic, tree and random forest</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>PR-AUC, calibration (Brier) and an operating threshold</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">scikit-learn · statsmodels · pandas</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/Stroke" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/Stroke/" class="link-sub">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="tools">
+            <a href="https://github.com/ParBproject/skycast" class="thumb-wrap" aria-label="SkyCast repository">
+              <img src="assets/skycast.svg" alt="SkyCast weather intelligence dashboard" loading="eager" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Tools</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">SkyCast</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Installable weather and air-quality dashboard on Open-Meteo — no framework, backend or API key.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Validated, normalized multi-API payloads</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>PWA with offline shell and labeled fallbacks</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Node + Python tests, CI, GitHub Pages</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-500">JavaScript · SVG · PWA</p>
+                <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/skycast" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/skycast/" class="link-sub">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-20">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-base font-semibold text-white">More on GitHub</h3>
+            <a href="https://github.com/ParBproject?tab=repositories" class="link-sub text-[13px]">All 15 repositories <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+          </div>
+          <ul class="mt-4 grid gap-x-12 border-t border-white/[0.06] md:grid-cols-2">
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/AI-Investment-Dashboard" class="font-medium text-slate-200 hover:text-white">AI-Investment-Dashboard</a>
+                <p class="mt-0.5 text-sm text-slate-500">Efficient frontier, Monte Carlo, Black–Scholes and what-if scenarios</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Quant</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/Portfolio-Risk-Analysis-Credit-Risk-Modeling" class="font-medium text-slate-200 hover:text-white">Portfolio Risk & Credit-Risk Modeling</a>
+                <p class="mt-0.5 text-sm text-slate-500">Credit memo on a synthetic 1,000-loan book with stress testing</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Finance</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/-Stock-Screener-Strategy-Backtester-Insider-Institutional-Signal-Tracker-" class="font-medium text-slate-200 hover:text-white">FinTools Pro — Screener & Backtester</a>
+                <p class="mt-0.5 text-sm text-slate-500">Factor screening, strategy backtests, insider/institutional signals</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Quant</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/algo-trading-consultant" class="font-medium text-slate-200 hover:text-white">Algorithmic Trading Research Framework</a>
+                <p class="mt-0.5 text-sm text-slate-500">Indicators, backtesting, grid/Bayesian search, walk-forward review</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Quant</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/Crypto-Trading-Bot" class="font-medium text-slate-200 hover:text-white">Crypto Trading Bot</a>
+                <p class="mt-0.5 text-sm text-slate-500">LSTM signals, risk controls and a paper-trading research system</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">ML</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/Generative-AI-Data" class="font-medium text-slate-200 hover:text-white">Generative AI Data</a>
+                <p class="mt-0.5 text-sm text-slate-500">Browser demos: in-browser transformer sentiment, churn, storytelling</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">AI</span><a href="https://parbproject.github.io/Generative-AI-Data/" class="link-sub text-xs">Live <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/denly-uptime" class="font-medium text-slate-200 hover:text-white">denly-uptime</a>
+                <p class="mt-0.5 text-sm text-slate-500">Off-host GitHub Actions uptime probe for denlyai.com, every 5 min</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Tools</span></div>
+            </li>
+            <li class="more-row">
+              <div class="min-w-0">
+                <a href="https://github.com/ParBproject/-A-Real-Time-Astronomical-Cosmological-Timepiece-" class="font-medium text-slate-200 hover:text-white">Cosmic Clock</a>
+                <p class="mt-0.5 text-sm text-slate-500">Real-time sky map and cosmic timeline with Skyfield & Astropy</p>
+              </div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">Tools</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills" data-section>
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+        <div class="grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <p class="eyebrow"><span class="eyebrow-num">04</span> Toolkit</p>
+            <h2 class="h2">Skills</h2>
+            <p class="mt-4 max-w-xs text-[15px] leading-relaxed text-slate-400">Languages, libraries and practices as they appear in the public repositories.</p>
+          </div>
+          <div class="grid gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.06] sm:grid-cols-2 lg:col-span-8">
+            <div class="bg-ink-950 p-6">
+              <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">Languages</h3>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="rounded-lg border border-accent-line bg-accent-soft px-3 py-1.5 font-medium text-accent">Python</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">SQL</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">JavaScript</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">HTML / CSS</span>
+              </div>
+            </div>
+            <div class="bg-ink-950 p-6">
+              <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">Data, ML &amp; AI</h3>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">pandas · NumPy</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">scikit-learn</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">TensorFlow / Keras</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">statsmodels</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">DuckDB</span>
+              </div>
+            </div>
+            <div class="bg-ink-950 p-6">
+              <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">Forecasting &amp; quant</h3>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">ARIMA / SARIMAX</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">Prophet</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">CVXPY</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">Monte Carlo</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">Backtesting</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">Excel modeling</span>
+              </div>
+            </div>
+            <div class="bg-ink-950 p-6">
+              <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">Engineering &amp; delivery</h3>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">Streamlit · Plotly</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">pytest</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">GitHub Actions CI</span>
+                <span class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-slate-200">GitHub Pages · PWA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-section>
+      <div class="mx-auto max-w-6xl px-5 pb-24 pt-4 sm:px-6 sm:pb-28">
+        <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-ink-900 p-7 sm:p-12">
+          <div class="aurora aurora-a" style="top:-140px; right:-60px; opacity:.45"></div>
+          <div class="grid-bg pointer-events-none absolute inset-0 opacity-60"></div>
+          <div class="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-num">05</span> Contact</p>
+              <h2 class="h2">Let&rsquo;s talk data, forecasting or software.</h2>
+              <p class="mt-4 max-w-md text-[16.5px] leading-relaxed text-slate-400">Hiring for a data analyst, quant, forecasting or software role? Every project above links straight to its code.</p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="mailto:githubproproject@proton.me" class="group btn-primary">Email me <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.58 11H3a1 1 0 110-2h11.59l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></a>
+                <a href="https://github.com/ParBproject" class="btn-ghost"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub profile</a>
+              </div>
+            </div>
+            <dl class="divide-y divide-white/[0.06] rounded-2xl border border-white/[0.07] bg-ink-950/70 text-sm backdrop-blur">
+              <div class="flex items-center justify-between gap-4 px-5 py-4"><dt class="text-slate-500">Email</dt><dd class="min-w-0 truncate"><a href="mailto:githubproproject@proton.me" class="text-slate-200 hover:text-accent">githubproproject@proton.me</a></dd></div>
+              <div class="flex items-center justify-between gap-4 px-5 py-4"><dt class="text-slate-500">GitHub</dt><dd><a href="https://github.com/ParBproject" class="text-slate-200 hover:text-accent">github.com/ParBproject</a></dd></div>
+              <div class="flex items-center justify-between gap-4 px-5 py-4"><dt class="text-slate-500">LinkedIn</dt><dd><span class="placeholder">[your LinkedIn URL]</span></dd></div>
+              <div class="flex items-center justify-between gap-4 px-5 py-4"><dt class="text-slate-500">Résumé</dt><dd><span class="placeholder">[link to résumé PDF]</span></dd></div>
+              <div class="flex items-center justify-between gap-4 px-5 py-4"><dt class="text-slate-500">Location</dt><dd><span class="placeholder">[your city / remote]</span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/[0.06]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p>© 2026 Par Bahrae · <a href="https://github.com/ParBproject" class="hover:text-slate-300">github.com/ParBproject</a></p>
+      <p>Screenshots from the linked repositories. Finance projects are educational, not investment advice. <a href="#top" class="ml-2 text-slate-400 hover:text-white">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Project filters
+    document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(b => b.classList.toggle('on', b === btn));
+      const f = btn.dataset.filter;
+      document.querySelectorAll('#grid .pcard').forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.tags.split(' ').includes(f)) ? '' : 'none';
+      });
+    }));
+    // Active nav state
+    const links = [...document.querySelectorAll('.navlink')];
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.dataset.nav === e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('[data-section]').forEach(s => io.observe(s));
+    window.addEventListener('scroll', () => { if (window.scrollY < 200) links.forEach(l => l.classList.remove('active')); }, { passive: true });
+  </script>
+</body>
+</html>
