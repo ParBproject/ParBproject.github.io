@@ -4,7 +4,7 @@
 
 @layer components {
   .eyebrow { @apply inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-accent; }
-  .eyebrow-num { @apply text-slate-600; }
+  .eyebrow-num { @apply text-slate-400; }
   .h2 { @apply mt-4 text-[2rem] font-bold leading-[1.1] tracking-[-0.025em] text-white sm:text-[2.6rem]; }
   .lede { @apply mt-5 max-w-2xl text-[16.5px] leading-relaxed text-slate-400 sm:text-[17.5px]; }
   .divider { @apply mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-white/10 to-transparent; }

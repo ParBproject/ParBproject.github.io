@@ -10,32 +10,32 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
-    dict(img='afm_cashflow.png', alt='Excel cash-flow forecast model', pos='left top', tags=['quant', 'forecasting'],
+    dict(img='afm_cashflow.png', w=2076, h=1383, alt='Excel cash-flow forecast model', pos='left top', tags=['quant', 'forecasting'],
          title='Advanced Financial Modeling Suite',
          desc='Excel workbook, a tested Python modeling core and a Streamlit dashboard for liquidity, credit and portfolio risk.',
          bullets=['Expected loss = EAD × PD × LGD, with capped stress scenarios', 'HHI concentration and covariance-aware wᵀΣw risk', 'Seeded Monte Carlo; numerical regression tests in CI'],
          stack=['Python', 'Excel', 'Streamlit'], code='https://github.com/ParBproject/Advanced-Financial-Models'),
-    dict(img='spp_lstm.png', alt='LSTM predicted vs actual close price', pos='left top', tags=['ml', 'forecasting'],
+    dict(img='spp_lstm.png', w=2082, h=1183, alt='LSTM predicted vs actual close price', pos='left top', tags=['ml', 'forecasting'],
          title='Stock Price Predictor',
          desc='Next-day forecasting with LSTM vs Random Forest, then checked in a Backtrader workflow.',
          bullets=['Explicit t+1 targets and train-only scaling', 'No future-news leakage in sentiment features', 'Commission-aware sizing; regression tests in CI'],
          stack=['TensorFlow', 'scikit-learn', 'Backtrader'], code='https://github.com/ParBproject/stock-price-predictor'),
-    dict(img='po_frontier.png', alt='Markowitz efficient frontier', pos='center', tags=['quant'],
+    dict(img='po_frontier.png', w=1809, h=1182, alt='Markowitz efficient frontier', pos='center', tags=['quant'],
          title='Markowitz Portfolio Optimizer',
          desc='Interactive mean-variance optimization with an efficient frontier, diagnostics and backtesting.',
          bullets=['Constrained optimization with CVXPY', 'Global minimum-variance & max-Sharpe portfolios', 'Backtest against an equal-weight benchmark'],
          stack=['CVXPY', 'Plotly', 'Streamlit'], code='https://github.com/ParBproject/Portfolio-Optimizer'),
-    dict(img='bay_board.png', alt='Bayline dock-to-stage control board', pos='left top', tags=['analytics'],
+    dict(img='bay_board.png', w=1440, h=900, alt='Bayline dock-to-stage control board', pos='left top', tags=['analytics'],
          title='Bayline — Fulfillment Control',
          desc='Three-building dock-to-stage case study: find the bottleneck, test a process change, price the labor.',
-         bullets=['DuckDB SQL marts with JOINs, RANK() OVER, LAG', 'Mann–Whitney test and bootstrap CI on the median', 'Median cycle 110 → 85 min <span class="text-slate-500">(seeded, illustrative data)</span>'],
+         bullets=['DuckDB SQL marts with JOINs, RANK() OVER, LAG', 'Mann–Whitney test and bootstrap CI on the median', 'Median cycle 110 → 85 min <span class="text-slate-400">(seeded, illustrative data)</span>'],
          stack=['SQL', 'DuckDB', 'Python'], code='https://github.com/ParBproject/E-commerce-Order-Fulfillment-Process-Improvement'),
-    dict(img='stroke_models.png', alt='Stroke casebook model comparison and holdout ROC', pos='left top', tags=['ml', 'analytics'],
+    dict(img='stroke_models.png', w=1440, h=900, alt='Stroke casebook model comparison and holdout ROC', pos='left top', tags=['ml', 'analytics'],
          title='Stroke Casebook',
          desc='Holdout study of the public Kaggle stroke file (249 strokes in 5,110 rows), treated as a rare-event problem.',
          bullets=['Stratified split before any imputation', 'Baselines vs logistic, tree and random forest', 'PR-AUC, calibration (Brier) and an operating threshold'],
          stack=['scikit-learn', 'statsmodels', 'pandas'], code='https://github.com/ParBproject/Stroke', live='https://parbproject.github.io/Stroke/'),
-    dict(img='skycast.svg', alt='SkyCast weather intelligence dashboard', pos='left top', tags=['tools'],
+    dict(img='skycast.svg', w=1440, h=900, alt='SkyCast weather intelligence dashboard', pos='left top', tags=['tools'],
          title='SkyCast',
          desc='Installable weather and air-quality dashboard on Open-Meteo — no framework, backend or API key.',
          bullets=['Validated, normalized multi-API payloads', 'PWA with offline shell and labeled fallbacks', 'Node + Python tests, CI, GitHub Pages'],
@@ -61,7 +61,7 @@ def card(c):
     return f'''
           <article class="pcard group" data-tags="{' '.join(c['tags'])}">
             <a href="{c['code']}" class="thumb-wrap" aria-label="{html.escape(c['title'])} repository">
-              <img src="assets/{c['img']}" alt="{c['alt']}" loading="eager" style="object-position:{c['pos']}" />
+              <img src="assets/{c['img']}" alt="{c['alt']}" width="{c['w']}" height="{c['h']}" loading="lazy" decoding="async" style="object-position:{c['pos']}" />
             </a>
             <div class="flex flex-1 flex-col p-6">
               <div class="flex flex-wrap gap-1.5">{tags}</div>
@@ -69,7 +69,7 @@ def card(c):
               <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">{c['desc']}</p>
               <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300">{bullets}</ul>
               <div class="mt-auto pt-6">
-                <p class="font-mono text-[11px] tracking-wide text-slate-500">{stack}</p>
+                <p class="font-mono text-[11px] tracking-wide text-slate-400">{stack}</p>
                 <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
                   <a href="{c['code']}" class="link-main">{GH} Code</a>{live}
                 </div>
@@ -84,9 +84,9 @@ def more(m):
             <li class="more-row">
               <div class="min-w-0">
                 <a href="{url}" class="font-medium text-slate-200 hover:text-white">{name}</a>
-                <p class="mt-0.5 text-sm text-slate-500">{desc}</p>
+                <p class="mt-0.5 text-sm text-slate-400">{desc}</p>
               </div>
-              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-500">{tag}</span>{livehtml}</div>
+              <div class="flex shrink-0 items-center gap-3"><span class="font-mono text-[10.5px] uppercase tracking-wider text-slate-400">{tag}</span>{livehtml}</div>
             </li>'''
 
 tpl = (D/'src'/'template.html').read_text()
