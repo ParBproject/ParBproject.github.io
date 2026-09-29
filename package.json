@@ -1,0 +1,13 @@
+{
+  "name": "parbproject-github-io",
+  "private": true,
+  "description": "Build tooling for the Par Bahrae portfolio site.",
+  "scripts": {
+    "build:html": "python3 src/build.py",
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify",
+    "build": "npm run build:html && npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
