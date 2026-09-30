@@ -10,16 +10,16 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
-    dict(img='afm_cashflow.png', w=2076, h=1383, alt='Excel cash-flow forecast model', pos='left top', tags=['quant', 'forecasting'],
+    dict(img='afm_dashboard.png', w=1600, h=1004, alt='Dark-theme Streamlit dashboard for Advanced Financial Models', pos='left top', tags=['quant', 'forecasting'],
          title='Advanced Financial Modeling Suite',
          desc='Excel workbook, a tested Python modeling core and a Streamlit dashboard for liquidity, credit and portfolio risk.',
-         bullets=['Expected loss = EAD × PD × LGD, with capped stress scenarios', 'HHI concentration and covariance-aware wᵀΣw risk', 'Seeded Monte Carlo; numerical regression tests in CI'],
+         bullets=['Expected loss = EAD × PD × LGD, with capped stress scenarios', 'HHI concentration and covariance-aware wᵀΣw risk', 'Seeded Monte Carlo; numerical regression tests in CI', 'Zero-correlation volatility 6.82%, Sharpe ratio 0.83, NPV of monthly net cash flows of $410,751'],
          stack=['Python', 'Excel', 'Streamlit'], code='https://github.com/ParBproject/Advanced-Financial-Models'),
     dict(img='spp_lstm.png', w=2082, h=1183, alt='LSTM predicted vs actual close price', pos='left top', tags=['ml', 'forecasting'],
          title='Stock Price Predictor',
          desc='Next-day forecasting with LSTM vs Random Forest, then checked in a Backtrader workflow.',
          bullets=['Explicit t+1 targets and train-only scaling', 'No future-news leakage in sentiment features', 'Commission-aware sizing; regression tests in CI'],
-         stack=['TensorFlow', 'scikit-learn', 'Backtrader'], code='https://github.com/ParBproject/stock-price-predictor'),
+         stack=['TensorFlow', 'scikit-learn', 'Backtrader'], code='https://github.com/ParBproject/stock-price-predictor', live='https://parbproject.github.io/stock-price-predictor/'),
     dict(img='po_frontier.png', w=1809, h=1182, alt='Markowitz efficient frontier', pos='center', tags=['quant'],
          title='Markowitz Portfolio Optimizer',
          desc='Interactive mean-variance optimization with an efficient frontier, diagnostics and backtesting.',
@@ -57,7 +57,7 @@ def card(c):
     tags = ''.join(f'<span class="chip">{TAGNAMES[t]}</span>' for t in c['tags'])
     bullets = ''.join(f'<li class="flex gap-2.5">{CHECK}<span>{b}</span></li>' for b in c['bullets'])
     stack = ' · '.join(c['stack'])
-    live = f'<a href="{c["live"]}" class="link-sub">Live demo {EXT}</a>' if c.get('live') else ''
+    live = f'<a href="{c["live"]}" class="link-main">Live demo {EXT}</a>' if c.get('live') else ''
     return f'''
           <article class="pcard group" data-tags="{' '.join(c['tags'])}">
             <a href="{c['code']}" class="thumb-wrap" aria-label="{html.escape(c['title'])} repository">

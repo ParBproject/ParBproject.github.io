@@ -34,7 +34,7 @@
         <span class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-emerald-700 font-mono text-[11px] font-semibold text-ink-950">PB</span>
         <span class="text-[15px] font-semibold tracking-tight text-white">Par Bahrae</span>
       </a>
-      <div class="hidden items-center gap-8 md:flex">
+      <div id="site-nav" class="site-nav">
         <a href="#featured" class="navlink" data-nav="featured">Case study</a>
         <a href="#strengths" class="navlink" data-nav="strengths">Strengths</a>
         <a href="#projects" class="navlink" data-nav="projects">Projects</a>
@@ -44,6 +44,9 @@
       <div class="flex items-center gap-2">
         <a href="https://github.com/ParBproject" class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-white/25 hover:text-white" aria-label="GitHub profile"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
         <a href="#contact" class="hidden rounded-lg bg-white/[0.06] px-3.5 py-2 text-sm font-semibold text-white ring-1 ring-white/10 transition hover:bg-white/10 sm:inline-flex">Get in touch</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -114,7 +117,7 @@
           <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">15</dd></div>
           <div class="border-b border-white/[0.06] p-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Streamlit dashboards</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">6</dd></div>
           <div class="border-r border-white/[0.06] p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Repos with CI pipelines</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">12</dd></div>
-          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">3</dd></div>
+          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">4</dd></div>
         </dl>
       </div>
     </section>
@@ -335,13 +338,13 @@
         <div id="grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article class="pcard group" data-tags="quant forecasting">
             <a href="https://github.com/ParBproject/Advanced-Financial-Models" class="thumb-wrap" aria-label="Advanced Financial Modeling Suite repository">
-              <img src="assets/afm_cashflow.png" alt="Excel cash-flow forecast model" width="2076" height="1383" loading="lazy" decoding="async" style="object-position:left top" />
+              <img src="assets/afm_dashboard.png" alt="Dark-theme Streamlit dashboard for Advanced Financial Models" width="1600" height="1004" loading="lazy" decoding="async" style="object-position:left top" />
             </a>
             <div class="flex flex-1 flex-col p-6">
               <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span><span class="chip">Forecasting</span></div>
               <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Advanced Financial Modeling Suite</h3>
               <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Excel workbook, a tested Python modeling core and a Streamlit dashboard for liquidity, credit and portfolio risk.</p>
-              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Expected loss = EAD × PD × LGD, with capped stress scenarios</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>HHI concentration and covariance-aware wᵀΣw risk</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Seeded Monte Carlo; numerical regression tests in CI</span></li></ul>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Expected loss = EAD × PD × LGD, with capped stress scenarios</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>HHI concentration and covariance-aware wᵀΣw risk</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Seeded Monte Carlo; numerical regression tests in CI</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Zero-correlation volatility 6.82%, Sharpe ratio 0.83, NPV of monthly net cash flows of $410,751</span></li></ul>
               <div class="mt-auto pt-6">
                 <p class="font-mono text-[11px] tracking-wide text-slate-400">Python · Excel · Streamlit</p>
                 <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
@@ -362,7 +365,7 @@
               <div class="mt-auto pt-6">
                 <p class="font-mono text-[11px] tracking-wide text-slate-400">TensorFlow · scikit-learn · Backtrader</p>
                 <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
-                  <a href="https://github.com/ParBproject/stock-price-predictor" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                  <a href="https://github.com/ParBproject/stock-price-predictor" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/stock-price-predictor/" class="link-main">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
                 </div>
               </div>
             </div>
@@ -413,7 +416,7 @@
               <div class="mt-auto pt-6">
                 <p class="font-mono text-[11px] tracking-wide text-slate-400">scikit-learn · statsmodels · pandas</p>
                 <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
-                  <a href="https://github.com/ParBproject/Stroke" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/Stroke/" class="link-sub">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                  <a href="https://github.com/ParBproject/Stroke" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/Stroke/" class="link-main">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
                 </div>
               </div>
             </div>
@@ -430,7 +433,7 @@
               <div class="mt-auto pt-6">
                 <p class="font-mono text-[11px] tracking-wide text-slate-400">JavaScript · SVG · PWA</p>
                 <div class="mt-4 flex items-center gap-5 border-t border-white/[0.06] pt-4">
-                  <a href="https://github.com/ParBproject/skycast" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/skycast/" class="link-sub">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                  <a href="https://github.com/ParBproject/skycast" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/skycast/" class="link-main">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
                 </div>
               </div>
             </div>
@@ -617,6 +620,27 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('[data-section]').forEach(s => io.observe(s));
     window.addEventListener('scroll', () => { if (window.scrollY < 200) links.forEach(l => l.classList.remove('active')); }, { passive: true });
+    // Collapsible nav below 720px
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if (navToggle && siteNav) {
+      const setOpen = (open) => {
+        siteNav.classList.toggle('is-open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', () => setOpen(navToggle.getAttribute('aria-expanded') !== 'true'));
+      siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          navToggle.focus();
+        }
+      });
+      const desktopNav = window.matchMedia('(min-width: 720px)');
+      const closeOnDesktop = () => { if (desktopNav.matches) setOpen(false); };
+      desktopNav.addEventListener('change', closeOnDesktop);
+    }
   </script>
 </body>
 </html>
