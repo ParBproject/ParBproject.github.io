@@ -34,7 +34,7 @@
         <span class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-emerald-700 font-mono text-[11px] font-semibold text-ink-950">PB</span>
         <span class="text-[15px] font-semibold tracking-tight text-white">Par Bahrae</span>
       </a>
-      <div class="hidden items-center gap-8 md:flex">
+      <div id="site-nav" class="site-nav">
         <a href="#featured" class="navlink" data-nav="featured">Case study</a>
         <a href="#strengths" class="navlink" data-nav="strengths">Strengths</a>
         <a href="#projects" class="navlink" data-nav="projects">Projects</a>
@@ -44,6 +44,9 @@
       <div class="flex items-center gap-2">
         <a href="https://github.com/ParBproject" class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-white/25 hover:text-white" aria-label="GitHub profile">{{GH}}</a>
         <a href="#contact" class="hidden rounded-lg bg-white/[0.06] px-3.5 py-2 text-sm font-semibold text-white ring-1 ring-white/10 transition hover:bg-white/10 sm:inline-flex">Get in touch</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -114,7 +117,7 @@
           <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">15</dd></div>
           <div class="border-b border-white/[0.06] p-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Streamlit dashboards</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">6</dd></div>
           <div class="border-r border-white/[0.06] p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Repos with CI pipelines</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">12</dd></div>
-          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">3</dd></div>
+          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">4</dd></div>
         </dl>
       </div>
     </section>
@@ -459,6 +462,27 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('[data-section]').forEach(s => io.observe(s));
     window.addEventListener('scroll', () => { if (window.scrollY < 200) links.forEach(l => l.classList.remove('active')); }, { passive: true });
+    // Collapsible nav below 720px
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if (navToggle && siteNav) {
+      const setOpen = (open) => {
+        siteNav.classList.toggle('is-open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', () => setOpen(navToggle.getAttribute('aria-expanded') !== 'true'));
+      siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          navToggle.focus();
+        }
+      });
+      const desktopNav = window.matchMedia('(min-width: 720px)');
+      const closeOnDesktop = () => { if (desktopNav.matches) setOpen(false); };
+      desktopNav.addEventListener('change', closeOnDesktop);
+    }
   </script>
 </body>
 </html>
