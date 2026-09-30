@@ -10,7 +10,7 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
-    dict(img='afm_cashflow.png', w=2076, h=1383, alt='Excel cash-flow forecast model', pos='left top', tags=['quant', 'forecasting'],
+    dict(img='afm_dashboard.png', w=1600, h=1004, alt='Dark-theme Streamlit dashboard for Advanced Financial Models', pos='left top', tags=['quant', 'forecasting'],
          title='Advanced Financial Modeling Suite',
          desc='Excel workbook, a tested Python modeling core and a Streamlit dashboard for liquidity, credit and portfolio risk.',
          bullets=['Expected loss = EAD × PD × LGD, with capped stress scenarios', 'HHI concentration and covariance-aware wᵀΣw risk', 'Seeded Monte Carlo; numerical regression tests in CI'],
