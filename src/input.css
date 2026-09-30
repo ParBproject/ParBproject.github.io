@@ -55,3 +55,57 @@ body { font-feature-settings: "cv02","cv03","cv04","cv11","ss01"; }
 @keyframes flow { to { stroke-dashoffset: -18; } }
 @media (prefers-reduced-motion: reduce) { .aurora, .grad-text, .pulse-dot, .flow-dash { animation: none !important; } }
 html { scroll-padding-top: 80px; }
+
+.nav-toggle {
+  display: grid;
+  place-items: center;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #cbd5e1;
+  background: transparent;
+}
+.nav-toggle:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+.nav-toggle:focus-visible { outline: 2px solid #34d399; outline-offset: 2px; }
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: currentColor;
+  position: relative;
+}
+.nav-toggle-bars::before,
+.nav-toggle-bars::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-bars::before { top: -5px; }
+.nav-toggle-bars::after { top: 5px; }
+.nav-toggle[aria-expanded="true"] { color: #34d399; border-color: rgba(52,211,153,0.45); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 719px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 50;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem 1.25rem 0.85rem;
+    background: #06080b;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav .navlink { display: block; padding: 0.7rem 0.15rem; }
+  .site-nav .navlink.active::after { bottom: 0.45rem; left: 0.15rem; right: auto; width: 1.25rem; }
+}
+@media (min-width: 720px) {
+  .nav-toggle { display: none; }
+  .site-nav { display: flex; align-items: center; gap: 2rem; }
+}
