@@ -10,6 +10,11 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
+    dict(img='vfm_overview.png', w=1440, h=900, alt='Volatility forecasting app comparing realized SPY volatility with HAR and LSTM forecasts, loss tables and Diebold-Mariano tests', pos='left top', tags=['ml', 'forecasting'],
+         title='Volatility Forecasting: HAR vs ML',
+         desc='One-day-ahead realized-volatility forecasts for SPY and 9 sector ETFs: HAR-RV and GARCH(1,1) against gradient boosting and an LSTM, strictly walk-forward (2013-01 to 2026-10), with no tuning.',
+         bullets=['LSTM mean QLIKE 9.0% below HAR, lowest on 10 of 10 ETFs; significant (Diebold-Mariano, 5%) on 8', 'Honest result on MSE: no model significantly beats HAR on any ETF, because a few crash days dominate the loss', 'Gradient boosting roughly ties HAR (-0.3% QLIKE); GARCH significantly worse than HAR on 7 of 10', 'No-lookahead tests: scrambling all future data leaves every past forecast bit-identical'],
+         stack=['Python', 'PyTorch', 'scikit-learn', 'arch', 'React', 'Vite'], code='https://github.com/ParBproject/vol-forecast-ml', live='https://parbproject.github.io/vol-forecast-ml/'),
     dict(img='prl_overview.png', w=1440, h=900, alt='Portfolio Risk Lab allocator with strategy controls, equity curve, weights and risk metrics', pos='left top', tags=['quant'],
          title='Portfolio Risk Lab',
          desc='Mean-variance, risk parity and Black-Litterman on a 21-ETF multi-asset universe, tested walk-forward against SPY, 60/40 and 1/N after trading costs (2012-05 to 2026-09).',
