@@ -14,7 +14,7 @@ CARDS = [
          title='Portfolio Risk & Performance Analyzer',
          desc='Does a diversified ETF portfolio beat an equity benchmark on return, risk and drawdowns? Equal-weight and minimum-variance portfolios of six ETFs against SPY, 2006 to 2026, with weights estimated from past data only and costs included.',
          bullets=['Reproducible pipeline: adjusted prices frozen with checksums, cleaned and stored in SQLite with SQL analysis queries', 'Equal weight halves SPY volatility and cuts max drawdown from -55.2% to -32.2%, but Sharpe is about even (0.52 vs 0.55)', 'Minimum variance has the lowest risk but the worst Sharpe (0.35), drifting into bonds', 'Streamlit dashboard with date filters, weights and risk summary; 114 pytest tests'],
-         stack=['Python', 'pandas', 'NumPy', 'SQLite', 'Plotly', 'Streamlit', 'pytest'], code='https://github.com/ParBproject/portfolio-risk-performance-analyzer'),
+         stack=['Python', 'pandas', 'NumPy', 'SQLite', 'Plotly', 'Streamlit', 'pytest'], code='https://github.com/ParBproject/portfolio-risk-performance-analyzer', live='https://parbproject.github.io/portfolio-risk-performance-analyzer/'),
     dict(img='vfm_overview.png', w=1440, h=900, alt='Volatility forecasting app comparing realized SPY volatility with HAR and LSTM forecasts, loss tables and Diebold-Mariano tests', pos='left top', tags=['ml', 'forecasting'],
          title='Volatility Forecasting: HAR vs ML',
          desc='One-day-ahead realized-volatility forecasts for SPY and 9 sector ETFs: HAR-RV and GARCH(1,1) against gradient boosting and an LSTM, strictly walk-forward (2013-01 to 2026-10), with no tuning.',
@@ -66,6 +66,50 @@ MORE = [
     ('Generative AI Data', 'https://github.com/ParBproject/Generative-AI-Data', 'Browser demos: in-browser transformer sentiment, churn, storytelling', 'AI', 'https://parbproject.github.io/Generative-AI-Data/'),
 ]
 
+
+CASES = [
+    dict(title='DCF Valuation Model', code='https://github.com/ParBproject/dcf-valuation-model', live='https://parbproject.github.io/dcf-valuation-model/',
+         q='How far are six large US caps (AAPL, MSFT, KO, JNJ, CAT, XOM) from a mechanical, fully sourced DCF value, and what growth do their prices imply?',
+         m='Free cash flow to the firm built from SEC EDGAR XBRL 10-K data, with revenue growth fading over 10 years to terminal growth and a terminal value that reinvests g/ROIC at 15% ROIC. WACC uses a Blume-adjusted 5-year regression beta, rf 5.13% (FRED DGS10) and a 4.23% Damodaran ERP. Risk comes from sensitivity grids, a 10,000-draw Monte Carlo and a reverse DCF. A TypeScript port matches the Python engine to 0.01% and runs live in the browser.',
+         f='The model sits well below the market for most names: AAPL is valued at $122.18 against $348.22, and CAT at $279.82 against $704.05. XOM is the only stock valued above its price ($216.26 vs $178.23, with a 71.9% Monte Carlo probability that value exceeds price). The reverse DCF shows prices imply about 20.1% 10-year revenue growth for AAPL and 20.3% for CAT. The gap is analysed in a calibration review rather than tuned away.'),
+    dict(title='UNH Equity Pitch', code='https://github.com/ParBproject/stock-pitch', live='https://parbproject.github.io/stock-pitch/',
+         q='Is there a defensible long case for UnitedHealth at $367.08 (2026-09-30), chosen by a scored screen rather than picked to fit a story?',
+         m='A two-stage FCF DCF with bear/base/bull scenarios from the stock\'s own rolling FCF growth, a reverse DCF, CAPM discounting, Fama-French five factors plus momentum with Newey-West t-stats, peer comps, and a walk-forward trend signal tested out-of-sample net of 10 bp costs. All data is frozen with SHA-256 manifests, and tests fail if a number does not come from the results file.',
+         f='The base case is $526.64 (43.5% upside), with a range of $354.47 to $764.68, while the reverse DCF says the price implies 6.0% stage-1 FCF growth against 13.7% in the base case. The risks are stated plainly: with the full-sample beta of 0.78 the value drops to $321.29 (-12.5%), and the trend signal (Sharpe 0.29) and buy-and-hold (0.49) both trail SPY (0.87).'),
+    dict(title='Energy Sector Deep Dive', code='https://github.com/ParBproject/energy-sector-deep-dive', live='https://parbproject.github.io/energy-sector-deep-dive/',
+         q='How do the five segments of US oil and gas (majors, producers, midstream, refiners, services) trade against oil, and do fundamentals or factors tell you anything beyond that?',
+         m='A point-in-time pipeline over 18 companies from 2015 on: HAC-robust oil-beta regressions, drawdowns in three shocks, fundamentals keyed to SEC filing dates, k-means and Ward clustering, and a weekly factor model evaluated walk-forward against an expanding-mean baseline. Survivorship bias is listed company by company.',
+         f='Producers are the most oil-sensitive segment (beta 0.55 per 1% WTI move, HAC t = 9.1) and refiners the least (0.27); producers fell 78.7% in the 2020 crash. Clustering on fundamentals largely rediscovers the segments (adjusted Rand index 0.61). Same-week factors explain 53.3% to 67.6% of segment returns out-of-sample, but last week\'s factors give negative out-of-sample R² (-3.7% to -7.7%): no next-week predictability.'),
+    dict(title='Portfolio Risk Lab', code='https://github.com/ParBproject/portfolio-risk-lab', live='https://parbproject.github.io/portfolio-risk-lab/',
+         q='Do mean-variance, risk parity or Black-Litterman beat simple benchmarks on a 21-ETF multi-asset universe once you test walk-forward and pay trading costs?',
+         m='Each month\'s weights use only the prior 60 months, with covariance shrunk 50% toward its diagonal, long-only with a 30% cap, and 10 bps per unit of turnover. Risk uses historical 95% VaR/CVaR and drawdowns, and returns are attributed to Fama-French 5 factors plus momentum. An in-browser allocator recomputes every metric and is tested to match Python.',
+         f='Out-of-sample from 2012-05 to 2026-09, no optimizer beat SPY (Sharpe 0.92) or 60/40 (0.84); mean-variance reached 0.76. Risk parity cut max drawdown to -12.72% vs -23.93% for SPY, at 5.45% volatility vs 14.03%. No strategy shows significant alpha (all |t| &lt; 2; mean-variance -2.20% a year, t = -1.63).'),
+    dict(title='SPY Volatility Surface', code='https://github.com/ParBproject/options-vol-surface', live='https://parbproject.github.io/options-vol-surface/',
+         q='What does SPY\'s implied-volatility surface look like from a real option chain, and can a smooth SVI fit represent it without arbitrage?',
+         m='Black-Scholes-Merton pricing with Brent root-finding for implied vol, filtered to out-of-the-money quotes from the 2026-10-22 close, using a 4.02% rate and a 1.22% dividend yield. Each expiry gets a raw SVI fit on total variance, then Gatheral butterfly and calendar arbitrage checks.',
+         f='The snapshot has 1,077 OTM quotes across 11 expiries (7 to 603 days). ATM implied vol rises from 15.75% at 7 days to 18.39% at 603 days, with a low of 14.52% at 39 days, and put skew falls from 26.12 to 3.24 vol points. SVI errors are 0.22 to 0.67 vol points and all 11 slices are butterfly-arbitrage-free. 49 of 1,210 calendar-check points fail, all from SVI extrapolation outside the quoted strikes, and this is reported rather than hidden.'),
+    dict(title='Volatility Forecasting (HAR vs ML)', code='https://github.com/ParBproject/vol-forecast-ml', live='https://parbproject.github.io/vol-forecast-ml/',
+         q='Can gradient boosting or a small LSTM forecast next-day realized volatility for SPY and the nine SPDR sector ETFs better than the HAR-RV and GARCH(1,1) baselines?',
+         m='A strictly walk-forward test over 3,473 out-of-sample trading days per ETF (2013-01-02 to 2026-10-22, 10 ETFs). Every model is scored with QLIKE and MSE, and Diebold-Mariano tests compare each one with HAR. Every README number is generated from the committed results/summary.json and pinned by tests.',
+         f='On QLIKE the LSTM is best on 10 of 10 ETFs (mean 0.2968 vs 0.3262 for HAR, -9.0%) and significantly better than HAR on 8 of 10. Gradient boosting is level with HAR (-0.3%), and GARCH is worst (significantly worse on 7). On MSE no model is significantly different from HAR on any ETF: the worst 5 days make up 40% to 94% of HAR\'s MSE, so the LSTM edge is proportional, not a better read on volatility spikes.'),
+    dict(title='Portfolio Risk &amp; Performance Analyzer', code='https://github.com/ParBproject/portfolio-risk-performance-analyzer', live='https://parbproject.github.io/portfolio-risk-performance-analyzer/',
+         q='How does a diversified six-ETF portfolio (SPY, EFA, AGG, TLT, GLD, VNQ) compare with holding SPY alone in return, risk and drawdowns over 2006 to 2026?',
+         m='Total-return Adj Close data from a SHA-256-verified Yahoo snapshot, loaded into SQLite with 11 SQL analysis queries tested against pandas. An equal-weight portfolio is rebalanced monthly, and a long-only minimum-variance portfolio is re-estimated each month from only the trailing 252 days, both paying 10 bp one-way costs. Sharpe, Sortino, drawdown, Calmar, beta and rolling metrics are computed in Python.',
+         f='From 2006-01-04 to 2026-09-30, equal weight cut annualised volatility from 19.20% to 11.11% and max drawdown from -55.2% to -32.2%, giving up about 4 points of return a year (7.08% vs 11.07%). Its Sharpe was close to SPY\'s (0.52 vs 0.55). Minimum variance (2007-02 to 2026-09) held 88% AGG on average, reached the lowest volatility (5.38%) and the lowest Sharpe (0.35): diversification bought lower risk, not better risk-adjusted return.'),
+]
+
+def case(c):
+    def para(label, text):
+        return f'<div><p class="font-mono text-[11px] uppercase tracking-wider text-accent">{label}</p><p class="mt-2 text-[14.5px] leading-relaxed text-slate-300">{text}</p></div>'
+    return f'''
+          <article class="pcard p-6 sm:p-8">
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-xl font-semibold tracking-tight text-white">{c['title']}</h3>
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-2"><a href="{c['code']}" class="link-main">{GH} Code</a><a href="{c['live']}" class="link-main">Live demo {EXT}</a></div>
+            </div>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">{para('Question', c['q'])}{para('Method', c['m'])}{para('Findings', c['f'])}</div>
+          </article>'''
+
 def card(c):
     tags = ''.join(f'<span class="chip">{TAGNAMES[t]}</span>' for t in c['tags'])
     bullets = ''.join(f'<li class="flex gap-2.5">{CHECK}<span>{b}</span></li>' for b in c['bullets'])
@@ -104,7 +148,7 @@ def more(m):
             </li>'''
 
 tpl = (D/'src'/'template.html').read_text()
-out = tpl.replace('{{CARDS}}', ''.join(card(c) for c in CARDS)).replace('{{MORE}}', ''.join(more(m) for m in MORE))
+out = tpl.replace('{{CARDS}}', ''.join(card(c) for c in CARDS)).replace('{{CASES}}', ''.join(case(c) for c in CASES)).replace('{{MORE}}', ''.join(more(m) for m in MORE))
 out = out.replace('{{GH}}', GH).replace('{{EXT}}', EXT).replace('{{ARROW}}', ARROW).replace('{{CHECK}}', CHECK)
 (D/'index.html').write_text(out)
 print('wrote', D/'index.html', len(out))
