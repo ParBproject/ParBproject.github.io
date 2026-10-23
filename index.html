@@ -114,7 +114,7 @@
       <!-- stat row -->
       <div class="relative mx-auto max-w-6xl px-5 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
         <dl class="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] sm:grid-cols-4">
-          <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">21</dd></div>
+          <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">22</dd></div>
           <div class="border-b border-white/[0.06] p-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Streamlit dashboards</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">6</dd></div>
           <div class="border-r border-white/[0.06] p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Repos with CI pipelines</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">12</dd></div>
           <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">13</dd></div>
@@ -336,6 +336,23 @@
           </div>
 
         <div id="grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="pcard group" data-tags="quant analytics">
+            <a href="https://github.com/ParBproject/portfolio-risk-performance-analyzer" class="thumb-wrap" aria-label="Portfolio Risk &amp; Performance Analyzer repository">
+              <img src="assets/rpa_dashboard.png" alt="Streamlit dashboard comparing equal-weight and minimum-variance ETF portfolios with SPY: cumulative returns, drawdowns and a risk summary" width="1440" height="900" loading="lazy" decoding="async" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span><span class="chip">Analytics</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Portfolio Risk & Performance Analyzer</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Does a diversified ETF portfolio beat an equity benchmark on return, risk and drawdowns? Equal-weight and minimum-variance portfolios of six ETFs against SPY, 2006 to 2026, with weights estimated from past data only and costs included.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Reproducible pipeline: adjusted prices frozen with checksums, cleaned and stored in SQLite with SQL analysis queries</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Equal weight halves SPY volatility and cuts max drawdown from -55.2% to -32.2%, but Sharpe is about even (0.52 vs 0.55)</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Minimum variance has the lowest risk but the worst Sharpe (0.35), drifting into bonds</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Streamlit dashboard with date filters, weights and risk summary; 114 pytest tests</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-400">Python · pandas · NumPy · SQLite · Plotly · Streamlit · pytest</p>
+                <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/portfolio-risk-performance-analyzer" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
           <article class="pcard group" data-tags="ml forecasting">
             <a href="https://github.com/ParBproject/vol-forecast-ml" class="thumb-wrap" aria-label="Volatility Forecasting: HAR vs ML repository">
               <img src="assets/vfm_overview.png" alt="Volatility forecasting app comparing realized SPY volatility with HAR and LSTM forecasts, loss tables and Diebold-Mariano tests" width="1440" height="900" loading="lazy" decoding="async" style="object-position:left top" />
