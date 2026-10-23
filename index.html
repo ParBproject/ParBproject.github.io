@@ -114,10 +114,10 @@
       <!-- stat row -->
       <div class="relative mx-auto max-w-6xl px-5 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
         <dl class="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] sm:grid-cols-4">
-          <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">18</dd></div>
+          <div class="border-b border-r border-white/[0.06] p-5 sm:border-b-0 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Projects</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">20</dd></div>
           <div class="border-b border-white/[0.06] p-5 sm:border-b-0 sm:border-r sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Streamlit dashboards</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">6</dd></div>
           <div class="border-r border-white/[0.06] p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Repos with CI pipelines</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">12</dd></div>
-          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">10</dd></div>
+          <div class="p-5 sm:px-6 sm:py-5"><dt class="text-[12.5px] text-slate-400">Live web demos</dt><dd class="mt-1.5 text-3xl font-bold tracking-tight text-white">12</dd></div>
         </dl>
       </div>
     </section>
@@ -336,6 +336,40 @@
           </div>
 
         <div id="grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="pcard group" data-tags="quant">
+            <a href="https://github.com/ParBproject/portfolio-risk-lab" class="thumb-wrap" aria-label="Portfolio Risk Lab repository">
+              <img src="assets/prl_overview.png" alt="Portfolio Risk Lab allocator with strategy controls, equity curve, weights and risk metrics" width="1440" height="900" loading="lazy" decoding="async" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">Portfolio Risk Lab</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Mean-variance, risk parity and Black-Litterman on a 21-ETF multi-asset universe, tested walk-forward against SPY, 60/40 and 1/N after trading costs (2012-05 to 2026-09).</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Honest result: no optimizer beat SPY (Sharpe 0.92) or 60/40 (0.84); mean-variance reached 0.76</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Risk parity cut max drawdown to -12.72% vs -23.93% for SPY</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>VaR/CVaR, drawdowns and Fama-French 5 + momentum attribution; no significant alpha (all |t| &lt; 2)</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>Interactive allocator recomputes every metric in the browser, tested to match Python</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-400">Python · NumPy · SciPy · pandas · React · Vite</p>
+                <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/portfolio-risk-lab" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/portfolio-risk-lab/" class="link-main">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="pcard group" data-tags="quant">
+            <a href="https://github.com/ParBproject/options-vol-surface" class="thumb-wrap" aria-label="SPY Volatility Surface repository">
+              <img src="assets/ovs_overview.png" alt="SPY implied-volatility surface app with a 3D SVI surface, term structure and skew" width="1440" height="900" loading="lazy" decoding="async" style="object-position:left top" />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-1.5"><span class="chip">Quant / Finance</span></div>
+              <h3 class="mt-4 text-lg font-semibold tracking-tight text-white">SPY Volatility Surface</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-slate-400">Black-Scholes pricing and Greeks, implied-vol solving and an SVI-fitted surface from a real SPY option-chain snapshot (close of 2026-10-22), with arbitrage checks.</p>
+              <ul class="mt-4 space-y-2 text-sm leading-snug text-slate-300"><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>1,077 out-of-the-money quotes across 11 expiries (7 to 603 days)</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>ATM implied vol 15.75% at 7 days rising to 18.39% at 603 days</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>SVI fit error 0.22 to 0.67 vol points; butterfly-arbitrage-free on 11 of 11 expiries</span></li><li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><span>49 of 1,210 calendar-check points fail, all from SVI extrapolation beyond the quoted strikes</span></li></ul>
+              <div class="mt-auto pt-6">
+                <p class="font-mono text-[11px] tracking-wide text-slate-400">Python · SciPy · yfinance · React · Vite · Canvas</p>
+                <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/[0.06] pt-4">
+                  <a href="https://github.com/ParBproject/options-vol-surface" class="link-main"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a><a href="https://parbproject.github.io/options-vol-surface/" class="link-main">Live demo <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.29a1 1 0 101.42 1.42L15 6.41V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </article>
           <article class="pcard group" data-tags="quant">
             <a href="https://github.com/ParBproject/stock-pitch" class="thumb-wrap" aria-label="UNH Equity Pitch repository">
               <img src="assets/sp_panel.png" alt="UNH long pitch scenario panel with beta toggle, FCF fan chart and value heatmap" width="1280" height="800" loading="lazy" decoding="async" style="object-position:left top" />
