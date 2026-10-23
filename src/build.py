@@ -10,6 +10,11 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
+    dict(img='rpa_dashboard.png', w=1440, h=900, alt='Streamlit dashboard comparing equal-weight and minimum-variance ETF portfolios with SPY: cumulative returns, drawdowns and a risk summary', pos='left top', tags=['quant', 'analytics'],
+         title='Portfolio Risk & Performance Analyzer',
+         desc='Does a diversified ETF portfolio beat an equity benchmark on return, risk and drawdowns? Equal-weight and minimum-variance portfolios of six ETFs against SPY, 2006 to 2026, with weights estimated from past data only and costs included.',
+         bullets=['Reproducible pipeline: adjusted prices frozen with checksums, cleaned and stored in SQLite with SQL analysis queries', 'Equal weight halves SPY volatility and cuts max drawdown from -55.2% to -32.2%, but Sharpe is about even (0.52 vs 0.55)', 'Minimum variance has the lowest risk but the worst Sharpe (0.35), drifting into bonds', 'Streamlit dashboard with date filters, weights and risk summary; 114 pytest tests'],
+         stack=['Python', 'pandas', 'NumPy', 'SQLite', 'Plotly', 'Streamlit', 'pytest'], code='https://github.com/ParBproject/portfolio-risk-performance-analyzer'),
     dict(img='vfm_overview.png', w=1440, h=900, alt='Volatility forecasting app comparing realized SPY volatility with HAR and LSTM forecasts, loss tables and Diebold-Mariano tests', pos='left top', tags=['ml', 'forecasting'],
          title='Volatility Forecasting: HAR vs ML',
          desc='One-day-ahead realized-volatility forecasts for SPY and 9 sector ETFs: HAR-RV and GARCH(1,1) against gradient boosting and an LSTM, strictly walk-forward (2013-01 to 2026-10), with no tuning.',
