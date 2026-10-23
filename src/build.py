@@ -10,6 +10,16 @@ CHECK = '<svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fi
 TAGNAMES = {'forecasting': 'Forecasting', 'quant': 'Quant / Finance', 'ml': 'ML', 'analytics': 'Analytics', 'tools': 'Tools'}
 
 CARDS = [
+    dict(img='prl_overview.png', w=1440, h=900, alt='Portfolio Risk Lab allocator with strategy controls, equity curve, weights and risk metrics', pos='left top', tags=['quant'],
+         title='Portfolio Risk Lab',
+         desc='Mean-variance, risk parity and Black-Litterman on a 21-ETF multi-asset universe, tested walk-forward against SPY, 60/40 and 1/N after trading costs (2012-05 to 2026-09).',
+         bullets=['Honest result: no optimizer beat SPY (Sharpe 0.92) or 60/40 (0.84); mean-variance reached 0.76', 'Risk parity cut max drawdown to -12.72% vs -23.93% for SPY', 'VaR/CVaR, drawdowns and Fama-French 5 + momentum attribution; no significant alpha (all |t| &lt; 2)', 'Interactive allocator recomputes every metric in the browser, tested to match Python'],
+         stack=['Python', 'NumPy', 'SciPy', 'pandas', 'React', 'Vite'], code='https://github.com/ParBproject/portfolio-risk-lab', live='https://parbproject.github.io/portfolio-risk-lab/'),
+    dict(img='ovs_overview.png', w=1440, h=900, alt='SPY implied-volatility surface app with a 3D SVI surface, term structure and skew', pos='left top', tags=['quant'],
+         title='SPY Volatility Surface',
+         desc='Black-Scholes pricing and Greeks, implied-vol solving and an SVI-fitted surface from a real SPY option-chain snapshot (close of 2026-10-22), with arbitrage checks.',
+         bullets=['1,077 out-of-the-money quotes across 11 expiries (7 to 603 days)', 'ATM implied vol 15.75% at 7 days rising to 18.39% at 603 days', 'SVI fit error 0.22 to 0.67 vol points; butterfly-arbitrage-free on 11 of 11 expiries', '49 of 1,210 calendar-check points fail, all from SVI extrapolation beyond the quoted strikes'],
+         stack=['Python', 'SciPy', 'yfinance', 'React', 'Vite', 'Canvas'], code='https://github.com/ParBproject/options-vol-surface', live='https://parbproject.github.io/options-vol-surface/'),
     dict(img='sp_panel.png', w=1280, h=800, alt='UNH long pitch scenario panel with beta toggle, FCF fan chart and value heatmap', pos='left top', tags=['quant'],
          title='UNH Equity Pitch',
          desc='A long call built like a quant research project: a long thesis on UnitedHealth, built from frozen, hash-checked data.',
