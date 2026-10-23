@@ -37,9 +37,12 @@
       <div id="site-nav" class="site-nav">
         <a href="#featured" class="navlink" data-nav="featured">Case study</a>
         <a href="#strengths" class="navlink" data-nav="strengths">Strengths</a>
+        <a href="#case-studies" class="navlink" data-nav="case-studies">Write-ups</a>
         <a href="#projects" class="navlink" data-nav="projects">Projects</a>
         <a href="#skills" class="navlink" data-nav="skills">Skills</a>
         <a href="#contact" class="navlink" data-nav="contact">Contact</a>
+        <!-- RESUME PLACEHOLDER: Frank will add resume.pdf at the repo root. Until then this link 404s. Do not replace with a generated PDF. -->
+        <a href="/resume.pdf" class="navlink" data-nav="resume">Résumé</a>
       </div>
       <div class="flex items-center gap-2">
         <a href="https://github.com/ParBproject" class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-white/25 hover:text-white" aria-label="GitHub profile">{{GH}}</a>
@@ -314,12 +317,27 @@
 
     <div class="divider"></div>
 
+    <!-- CASE STUDIES (generated in src/build.py from repo READMEs/results) -->
+    <section id="case-studies" data-section>
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+        <div class="max-w-2xl">
+          <p class="eyebrow"><span class="eyebrow-num">03</span> Quant write-ups</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Question, method, findings</h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-400">Short case studies of the quant projects. Every number is taken from the committed README or results file in each repository.</p>
+        </div>
+        <div class="mt-10 grid gap-6">{{CASES}}
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- PROJECTS -->
     <section id="projects" data-section>
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl">
-            <p class="eyebrow"><span class="eyebrow-num">03</span> Selected work</p>
+            <p class="eyebrow"><span class="eyebrow-num">04</span> Selected work</p>
             <h2 class="h2">Projects</h2>
             <p class="lede">Forecasting, quantitative finance, machine learning, analytics and tooling &mdash; each with code, screenshots and run instructions.</p>
           </div>
@@ -356,7 +374,7 @@
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
         <div class="grid gap-10 lg:grid-cols-12">
           <div class="lg:col-span-4">
-            <p class="eyebrow"><span class="eyebrow-num">04</span> Toolkit</p>
+            <p class="eyebrow"><span class="eyebrow-num">05</span> Toolkit</p>
             <h2 class="h2">Skills</h2>
             <p class="mt-4 max-w-xs text-[15px] leading-relaxed text-slate-400">Languages, libraries and practices as they appear in the public repositories.</p>
           </div>
@@ -413,7 +431,7 @@
           <div class="grid-bg pointer-events-none absolute inset-0 opacity-60"></div>
           <div class="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p class="eyebrow"><span class="eyebrow-num">05</span> Contact</p>
+              <p class="eyebrow"><span class="eyebrow-num">06</span> Contact</p>
               <h2 class="h2">Let&rsquo;s talk data, forecasting or software.</h2>
               <p class="mt-4 max-w-md text-[16.5px] leading-relaxed text-slate-400">Hiring for a data analyst, quant, forecasting or software role? Every project above links straight to its code.</p>
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
