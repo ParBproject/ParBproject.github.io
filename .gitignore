@@ -1,2 +1,13 @@
 node_modules/
 screenshots/
+__pycache__/
+*.pyc
+
+# Local editor and agent files. Not part of the site.
+.cursor/
+.cursorrules
+AGENTS.md
+AGENT.md
+agent-notes.md
+prompts/
+plans/
