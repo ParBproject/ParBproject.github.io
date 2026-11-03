@@ -1,0 +1,52 @@
+# Rebuilds the site and fails when committed index.html or assets/site.css
+# is stale. Then checks internal files, anchors, and external links.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    name: Build and links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        env:
+          # Silence the caniuse age warning. The installed data is pinned by the lockfile.
+          BROWSERSLIST_IGNORE_OLD_DATA: "1"
+        run: npm run build
+
+      - name: Committed build output is up to date
+        id: fresh
+        run: npm run check:fresh
+
+      - name: Check links
+        if: success() || steps.fresh.conclusion == 'failure'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run check:links

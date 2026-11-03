@@ -5,7 +5,10 @@
   "scripts": {
     "build:html": "python3 src/build.py",
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify",
-    "build": "npm run build:html && npm run build:css"
+    "build": "npm run build:html && npm run build:css",
+    "check:fresh": "git diff --exit-code -- index.html assets/site.css",
+    "check:links": "python3 scripts/check_links.py",
+    "check": "npm run build && npm run check:fresh && npm run check:links"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"
